@@ -52,7 +52,9 @@ public class Main {
         Student student12 = new Student("Natalia", "W");
         Student student13 = new Student("Adam", "Z");
 
-        List<Student> list1 = new ArrayList<Student>();
+
+
+        ArrayList<Student> list1 = new ArrayList<Student>();
         list1.add(student2);
         list1.add(student1);
         list1.add(student3);
@@ -73,6 +75,8 @@ public class Main {
         list4.add(student12);
         list4.add(student13);
 
+        Reader reader = new Reader();
+
 
         Map<School, List<Student>> schoolMap = new HashMap<School, List<Student>>();
 
@@ -83,7 +87,11 @@ public class Main {
 
 
         for (Map.Entry<School, List<Student>> entry : schoolMap.entrySet()) {
-            System.out.println("School " + entry.getKey().getName() + " " + entry.getKey().getCity() + entry.getValue().toString());
+            System.out.println("School " + entry.getKey().getName() + " " + entry.getKey().getCity());
+
+            for(int i = 0; i < entry.getValue().size(); i++){
+                System.out.println(entry.getValue().get(i).toString());
+            }
 
         }
     }
